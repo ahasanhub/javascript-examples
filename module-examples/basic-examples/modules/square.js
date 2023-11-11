@@ -1,14 +1,22 @@
-const name='square';
+const name = 'square';
 
-function draw(ctx,length,x,y,color){
-    ctx.fillStyle=color;
-    ctx.fillRect(x,y,length,length);
-    return {length,x,y,color};
+function draw(ctx, length, x, y, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x, y, length, length);
+
+  return {
+    length: length,
+    x: x,
+    y: y,
+    color: color
+  };
 }
-function random(min,max){
-    let num=Math.floor(Math.random() * (max-min)) + min;
-    return num;
+
+function random(min, max) {
+   let num = Math.floor(Math.random() * (max - min)) + min;
+   return num;
 }
+
 function reportArea(length, listId) {
   let listItem = document.createElement('li');
   listItem.textContent = `${name} area is ${length * length}px squared.`
